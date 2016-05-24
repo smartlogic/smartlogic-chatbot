@@ -1,0 +1,29 @@
+<%= link_to 'New Form', new_article_path %>
+<table>
+  <tr>
+    <th>Token</th>
+    <th>Team id</th>
+    <th>Team Domain</th>
+    <th>Channel id</th>
+    <th>Channel Name</th>
+    <th>User id</th>
+    <th>User Name</th>
+    <th>Text</th>
+    <th>Trigger Word</th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.token %></td>
+      <td><% article.team_id =%></td>
+      <td><% article.team_domain =%></td>
+      <td><% article.channel_id =%></td>
+      <td><% article.channel_name =%></td>
+      <td><% article.user_id =%></td>
+      <td><% article.user_name =%></td>
+      <td><%= article.text %></td>
+      <td><%= article.trigger_word %></td>
+    </tr>
+  <% end %>
+</table>
+
