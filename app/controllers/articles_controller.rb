@@ -12,11 +12,10 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
-   
-    @article.save
+    if @article.save   
     redirect_to @article
-  end 
-
+    end 
+  end
   private
     def article_params
       params.require(:article).permit(:token, :team_id, :team_domain, :channel_id, :channel_name, :user_id, :user_name, :text, :trigger_word)
